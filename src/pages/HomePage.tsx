@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { usePropertyContext } from '../context/PropertyContext';
 import { useModalContext } from '../context/ModalContext';
+import { HeroBackgroundSlideshow } from '../components/home/HeroBackgroundSlideshow';
 import { PropertyCard } from '../components/property/PropertyCard';
 import { HeroSearchPanel } from '../components/property/HeroSearchPanel';
 import { WhatsAppButton } from '../components/common/WhatsAppButton';
@@ -42,35 +43,28 @@ export const HomePage: React.FC = () => {
     <div className="space-y-16 sm:space-y-24">
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[580px] lg:min-h-[640px] flex items-center justify-center bg-[#0B1315] text-white overflow-hidden pt-12 pb-24">
-        {/* Background image with high quality architectural rendering */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/assets/projects/godrej-epoque-neopolis/images/render_page_1.jpg"
-            alt="Hyderabad luxury residential community - Godrej Epoque Neopolis"
-            className="w-full h-full object-cover object-center transform scale-105 filter brightness-70"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/55 to-[#0B1315] opacity-95" />
-        </div>
+      <section className="relative min-h-[480px] sm:min-h-[520px] lg:min-h-[560px] flex items-center justify-center bg-[#0B1315] text-white overflow-hidden pt-12 pb-16 sm:pt-16 sm:pb-18 lg:pt-20 lg:pb-20">
+        {/* Automatic Background Slideshow with curated 4-image showcase and brighter subtle overlay */}
+        <HeroBackgroundSlideshow />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
           
           {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold animate-fadeIn">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold animate-fadeIn shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#C7A76C] animate-pulse" />
             <span>KK ASSOCIATES • Klinkaaraa Associates • Gachibowli, Hyderabad</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-white leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
             Find Your Perfect Property<br />
-            <span className="text-[#DFCA98]">
+            <span className="text-[#DFCA98] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
               in Hyderabad
             </span>
           </h1>
 
           {/* Supporting Text */}
-          <p className="max-w-2xl mx-auto text-sm sm:text-lg text-gray-200 leading-relaxed font-normal">
+          <p className="max-w-2xl mx-auto text-sm sm:text-lg text-gray-100 leading-relaxed font-normal drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
             Explore premium residential plots, apartments, villas, and resale properties with KK Associates. Your trusted real estate partner in Hyderabad.
           </p>
 
@@ -98,26 +92,6 @@ export const HomePage: React.FC = () => {
               label="Talk to Our Team"
               className="w-full sm:w-auto"
             />
-          </div>
-
-          {/* Quick Metrics Bar */}
-          <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-left text-white/90">
-            <div className="p-3.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/15 transition-colors">
-              <span className="text-xl sm:text-2xl font-bold font-display text-[#DFCA98]">Clear Titles</span>
-              <p className="text-[11px] text-gray-300 mt-0.5">Verified Layout Plots</p>
-            </div>
-            <div className="p-3.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/15 transition-colors">
-              <span className="text-xl sm:text-2xl font-bold font-display text-[#DFCA98]">2, 3 & 4 BHK</span>
-              <p className="text-[11px] text-gray-300 mt-0.5">Luxury High-Rises</p>
-            </div>
-            <div className="p-3.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/15 transition-colors">
-              <span className="text-xl sm:text-2xl font-bold font-display text-[#DFCA98]">100% Clear</span>
-              <p className="text-[11px] text-gray-300 mt-0.5">Verified Legal Titles</p>
-            </div>
-            <div className="p-3.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/15 transition-colors">
-              <span className="text-xl sm:text-2xl font-bold font-display text-[#DFCA98]">Gachibowli</span>
-              <p className="text-[11px] text-gray-300 mt-0.5">Direct Office Advisory</p>
-            </div>
           </div>
 
         </div>
