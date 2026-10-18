@@ -30,7 +30,7 @@ export const AboutPage: React.FC = () => {
           </p>
 
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-            In a fast-evolving Hyderabad property landscape, we stand for clear legal titles, verified government layout sanctions (HMDA, DTCP, TS RERA), and transparent client communication.
+            In a fast-evolving Hyderabad property landscape, we stand for clear legal titles, verified layout sanctions (DTCP, TS RERA), and transparent client communication.
           </p>
 
           <div className="pt-2 flex flex-wrap gap-3">

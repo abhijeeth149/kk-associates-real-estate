@@ -92,7 +92,7 @@ export const PropertyFilters: React.FC = () => {
               type="text"
               value={filter.searchQuery}
               onChange={handleSearchChange}
-              placeholder="e.g. HMDA Plot, Tellapur, 3 BHK..."
+              placeholder="e.g. Residential Plot, Tellapur, 3 BHK..."
               className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0D8B78] focus:border-transparent"
             />
           </div>
@@ -111,7 +111,7 @@ export const PropertyFilters: React.FC = () => {
               className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0D8B78] bg-white cursor-pointer"
             >
               <option value="">All Property Types</option>
-              <option value="Residential Plot">Residential Plot (HMDA/DTCP)</option>
+              <option value="Residential Plot">Residential Plot (Clear Title)</option>
               <option value="Open Plot">Open Plot</option>
               <option value="Premium Flat">Premium Flat (2/3 BHK)</option>
               <option value="Residential Apartment">Residential Apartment</option>

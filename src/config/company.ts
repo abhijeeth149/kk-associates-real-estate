@@ -60,7 +60,7 @@ export const COMPANY_CONFIG = {
       id: 'residential-plots',
       title: 'Residential Plots',
       slug: 'residential-plots',
-      description: 'HMDA & DTCP approved layout plots in fast-growing growth corridors.',
+      description: 'Verified residential layout plots in fast-growing growth corridors with 100% clear titles.',
       image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80',
       badge: 'High Appreciation'
     },

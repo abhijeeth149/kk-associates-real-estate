@@ -236,7 +236,7 @@ Message: ${formData.message || 'Please contact me regarding available properties
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0D8B78] bg-[#F8FAF8] cursor-pointer"
                 >
-                  <option value="Residential Plot Enquiry">Residential Plot Enquiry (HMDA/DTCP)</option>
+                  <option value="Residential Plot Enquiry">Residential Plot Enquiry (Clear Title)</option>
                   <option value="Open Plot Inquiry">Open Plot Inquiry</option>
                   <option value="Flat / Apartment Purchase">Flat / Apartment Purchase</option>
                   <option value="Resale Property Enquiry">Resale Property Enquiry</option>

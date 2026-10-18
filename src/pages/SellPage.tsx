@@ -261,7 +261,7 @@ export const SellPage: React.FC = () => {
                     onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
                     className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0D8B78] bg-[#F8FAF8] cursor-pointer"
                   >
-                    <option value="Residential Plot">Residential Plot (HMDA/DTCP)</option>
+                    <option value="Residential Plot">Residential Plot (Clear Title)</option>
                     <option value="Open Plot">Open Plot</option>
                     <option value="Premium Flat">Premium Flat (2/3 BHK)</option>
                     <option value="Residential Apartment">Residential Apartment</option>

@@ -4,7 +4,7 @@ export const INITIAL_PROPERTIES: Property[] = [
   {
     id: 'kk-plot-01',
     listingId: 'KK-PL-101',
-    title: 'HMDA Approved Villa Plot in Premium Gated Community',
+    title: 'Clear Title Villa Plot in Premium Gated Community',
     tagline: 'Prime West Hyderabad Growth Corridor',
     purpose: 'buy',
     type: 'Residential Plot',
@@ -28,7 +28,7 @@ export const INITIAL_PROPERTIES: Property[] = [
     ],
     description: 'Elevate your lifestyle with a 100% Vaastu compliant residential plot situated in a gated township along the booming Mokila corridor. Features underground drainage, 40ft blacktop roads, landscaped parks, and instant access to Neopolis & Financial District via 4-lane highway.',
     amenities: [
-      'HMDA Approved Layout',
+      'Gated Community Layout',
       '100% Clear Title',
       '40 & 30 Ft CC Roads',
       'Underground Electricity & Drainage',
@@ -43,7 +43,7 @@ export const INITIAL_PROPERTIES: Property[] = [
       'Rapidly appreciating capital appreciation zone',
       'Bank loans approved by major banks'
     ],
-    documentStatus: 'HMDA & RERA Approved Layout',
+    documentStatus: 'TS RERA Registered Layout',
     reraNumber: 'P02400005821 (Layout)',
     isDemonstrationData: true,
     createdAt: '2026-03-15'
@@ -127,7 +127,7 @@ export const INITIAL_PROPERTIES: Property[] = [
     description: 'Prime 300 Sq. Yds corner open plot directly abutting a 60ft masterplan road. Ideal for custom independent bungalow construction or long-term high-yield land banking with rapid infrastructure expansion around Kollur and Neopolis.',
     amenities: [
       '60 Ft & 40 Ft Corner Roads',
-      'HMDA Approved Layout',
+      'Gated Community Layout',
       'Clear Spot Registration',
       'Underground Electrical Cabling',
       'Storm Water Drainage System',
@@ -274,7 +274,7 @@ export const INITIAL_PROPERTIES: Property[] = [
       'Zero noise acoustic double glazed glass',
       '100% Vaastu compliant architecture'
     ],
-    documentStatus: 'TS RERA & HMDA Sanctioned',
+    documentStatus: 'TS RERA Sanctioned',
     reraNumber: 'P02400003710',
     isDemonstrationData: true,
     createdAt: '2026-03-28'
@@ -360,7 +360,7 @@ export const INITIAL_PROPERTIES: Property[] = [
       'Walking distance to reputed schools',
       'Excellent rental yields for investors'
     ],
-    documentStatus: 'HMDA & TS RERA Approved',
+    documentStatus: 'TS RERA Approved',
     isDemonstrationData: true,
     createdAt: '2026-03-30'
   }

@@ -3,7 +3,8 @@ import {
   Plus, 
   Trash2, 
   Edit3, 
-  Lock 
+  Lock,
+  ShieldAlert 
 } from 'lucide-react';
 import { usePropertyContext } from '../context/PropertyContext';
 import { useModalContext } from '../context/ModalContext';
@@ -39,8 +40,8 @@ export const AdminPage: React.FC = () => {
     status: 'Available',
     featured: true,
     images: ['https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80'],
-    description: 'Prime HMDA approved residential plot with 40ft blacktop roads, underground water lines, and clear title.',
-    amenities: ['HMDA Approved Layout', 'Clear Title', '40ft CC Roads', 'Underground Electricity'],
+    description: 'Prime residential plot with 40ft blacktop roads, underground water lines, and clear title.',
+    amenities: ['Gated Community Layout', 'Clear Title', '40ft CC Roads', 'Underground Electricity'],
     highlights: ['Prime Growth Corridor', 'Immediate Registration'],
     isDemonstrationData: false
   });
@@ -219,7 +220,7 @@ export const AdminPage: React.FC = () => {
                 featured: true,
                 images: ['https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80'],
                 description: 'Verified residential plot in prime gated layout with clear link documents.',
-                amenities: ['Clear Title', 'HMDA Layout', 'Spot Registration'],
+                amenities: ['Clear Title', 'Gated Layout', 'Spot Registration'],
                 highlights: ['Prime Location'],
                 isDemonstrationData: false
               });
@@ -239,6 +240,17 @@ export const AdminPage: React.FC = () => {
             Lock Dashboard
           </button>
         </div>
+      </div>
+
+      {/* Production Architecture & Persistence Notice */}
+      <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 space-y-1">
+        <div className="flex items-center gap-2 font-bold text-amber-950">
+          <ShieldAlert className="w-4 h-4 text-[#C7A76C]" />
+          <span>Client-Side Demonstration Notice & Production Database Architecture</span>
+        </div>
+        <p className="leading-relaxed">
+          <strong>Current Persistence:</strong> Property listing additions and edits are preserved locally in this browser using <code>localStorage</code>. Changes made here will not automatically synchronize across other public visitors' devices until a shared production database (such as Supabase, PostgreSQL, or Firebase) is connected. No confidential builder documents or private customer data should be placed in unauthenticated browser storage.
+        </p>
       </div>
 
       {/* Add / Edit Form Drawer */}
@@ -268,7 +280,7 @@ export const AdminPage: React.FC = () => {
                   required
                   value={formData.title || ''}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  placeholder="e.g. HMDA Approved Villa Plot in Mokila"
+                  placeholder="e.g. Clear Title Villa Plot in Mokila"
                   className="w-full px-3 py-2 text-xs sm:text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#075E54] focus:outline-none"
                 />
               </div>

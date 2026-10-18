@@ -4,6 +4,7 @@ import { buildWhatsAppUrl, getGeneralWhatsAppMessage } from '../../utils/whatsap
 
 interface WhatsAppButtonProps {
   message?: string;
+  customMessage?: string;
   label?: string;
   variant?: 'primary' | 'secondary' | 'outline' | 'gold' | 'glass';
   size?: 'sm' | 'md' | 'lg';
@@ -15,6 +16,7 @@ interface WhatsAppButtonProps {
 
 export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   message,
+  customMessage,
   label = 'Chat on WhatsApp',
   variant = 'primary',
   size = 'md',
@@ -23,7 +25,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   iconOnly = false,
   onClick
 }) => {
-  const finalMessage = message || getGeneralWhatsAppMessage();
+  const finalMessage = customMessage || message || getGeneralWhatsAppMessage();
   const href = buildWhatsAppUrl(finalMessage);
 
   const handleClick = () => {

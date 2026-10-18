@@ -5,6 +5,7 @@ import { BrandLogo } from '../common/BrandLogo';
 import { COMPANY_CONFIG } from '../../config/company';
 import { WhatsAppButton } from '../common/WhatsAppButton';
 import { getGeneralWhatsAppMessage } from '../../utils/whatsapp';
+import { VERIFIED_PROJECTS } from '../../data/projects';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -19,15 +20,15 @@ export const Footer: React.FC = () => {
           
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
             <div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C7A76C]/20 text-[#C7A76C] text-xs font-semibold uppercase tracking-wider mb-3">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C7A76C]/20 text-[#DFCA98] text-xs font-semibold uppercase tracking-wider mb-3">
                 <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Hyderabad Property Specialists</span>
+                <span>Hyderabad Property Specialists • Gachibowli</span>
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-white tracking-tight">
-                Ready to find your ideal plot or flat?
+                Ready to find your ideal plot, flat, or project?
               </h2>
               <p className="text-emerald-100 text-sm sm:text-base mt-2 max-w-xl leading-relaxed">
-                Connect directly with the KK Associates real estate advisors in Gachibowli for personalized site visits and clear documentation.
+                Connect directly with the KK Associates real estate advisors in Gachibowli for personalized site visits, verified pricing sheets, and clear documentation.
               </p>
             </div>
 
@@ -36,7 +37,7 @@ export const Footer: React.FC = () => {
                 variant="gold"
                 size="lg"
                 label="Chat on WhatsApp"
-                message={getGeneralWhatsAppMessage()}
+                customMessage={getGeneralWhatsAppMessage()}
                 className="w-full sm:w-auto"
               />
               <a
@@ -50,65 +51,77 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* 4-Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-emerald-800/80">
+        {/* 5-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 pb-12 border-b border-emerald-800/80 text-left">
           
           {/* Column 1: Brand Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-1 md:col-span-2">
             <BrandLogo variant="light" size="lg" />
             <p className="text-emerald-100/80 text-xs sm:text-sm leading-relaxed">
-              KK Associates (Klinkaaraa Associates) is your dedicated partner for discovering verified residential plots, open plots, luxury apartments, and hassle-free resale properties in Hyderabad.
+              KK Associates (Klinkaaraa Associates) is your trusted real estate partner headquartered in Gachibowli, Hyderabad, for residential plots, open plots, high-rise apartments, and verified resale properties.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs text-[#C7A76C]">
+            <div className="pt-1 flex items-center gap-2 text-xs text-[#DFCA98]">
               <ShieldCheck className="w-4 h-4 flex-shrink-0" />
-              <span>Transparent Advisory & Site Visits</span>
+              <span>100% Clear Titles & TS RERA Guidance</span>
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-[#C7A76C] uppercase tracking-wider font-display">
-              Quick Links
+              Navigation
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <Link to="/" className="text-emerald-100/80 hover:text-white hover:underline flex items-center justify-between group">
+                <Link to="/" className="text-emerald-100/80 hover:text-white flex items-center justify-between group">
                   <span>Home</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/buy" className="text-emerald-100/80 hover:text-white hover:underline flex items-center justify-between group">
+                <Link to="/buy" className="text-emerald-100/80 hover:text-white flex items-center justify-between group">
                   <span>Buy Property</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/resale" className="text-emerald-100/80 hover:text-white hover:underline flex items-center justify-between group">
+                <Link to="/resale" className="text-emerald-100/80 hover:text-white flex items-center justify-between group">
                   <span>Resale Properties</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/properties" className="text-emerald-100/80 hover:text-white hover:underline flex items-center justify-between group">
-                  <span>Explore All Properties</span>
+                <Link to="/projects" className="text-emerald-100/80 hover:text-white flex items-center justify-between group">
+                  <span>Verified Projects</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/sell" className="text-emerald-100/80 hover:text-white hover:underline flex items-center justify-between group">
+                <Link to="/services" className="text-emerald-100/80 hover:text-white flex items-center justify-between group">
+                  <span>Our Services</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              <li>
+                <Link to="/sell" className="text-emerald-100/80 hover:text-white flex items-center justify-between group">
                   <span>Sell Your Property</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-emerald-100/80 hover:text-white hover:underline flex items-center justify-between group">
-                  <span>About KK Associates</span>
+                <Link to="/blogs" className="text-emerald-100/80 hover:text-white flex items-center justify-between group">
+                  <span>Market Insights</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="text-emerald-100/80 hover:text-white hover:underline flex items-center justify-between group">
+                <Link to="/about" className="text-emerald-100/80 hover:text-white flex items-center justify-between group">
+                  <span>About Us</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="text-emerald-100/80 hover:text-white flex items-center justify-between group">
                   <span className="flex items-center gap-1.5">
                     <span>Careers</span>
                     <span className="px-1.5 py-0.2 text-[9px] bg-[#C7A76C] text-[#172522] rounded font-bold">Hiring</span>
@@ -119,41 +132,70 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Property Categories */}
+          {/* Column 3: Featured Projects */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-[#C7A76C] uppercase tracking-wider font-display">
-              Property Categories
+              Landmark Projects
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
+              {VERIFIED_PROJECTS.slice(0, 6).map(proj => (
+                <li key={proj.slug}>
+                  <Link
+                    to={`/projects/${proj.slug}`}
+                    className="text-emerald-100/80 hover:text-white transition-colors block truncate"
+                  >
+                    {proj.name}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <Link to="/properties?type=Residential%20Plot" className="text-emerald-100/80 hover:text-white transition-colors">
-                  Residential Plots (HMDA/DTCP)
-                </Link>
-              </li>
-              <li>
-                <Link to="/properties?type=Open%20Plot" className="text-emerald-100/80 hover:text-white transition-colors">
-                  Open Plots & Land Enclaves
-                </Link>
-              </li>
-              <li>
-                <Link to="/properties?type=Premium%20Flat" className="text-emerald-100/80 hover:text-white transition-colors">
-                  Premium 2 & 3 BHK Flats
-                </Link>
-              </li>
-              <li>
-                <Link to="/properties?type=Residential%20Apartment" className="text-emerald-100/80 hover:text-white transition-colors">
-                  Residential Apartments & Gated Communities
-                </Link>
-              </li>
-              <li>
-                <Link to="/resale" className="text-emerald-100/80 hover:text-white transition-colors">
-                  Verified Resale Flats & Plots
+                <Link to="/projects" className="text-[#DFCA98] hover:underline font-bold text-xs pt-1 block">
+                  View All Projects →
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Contact Information */}
+          {/* Column 4: Services & Calculator */}
+          <div className="space-y-3">
+            <h3 className="text-sm font-bold text-[#C7A76C] uppercase tracking-wider font-display">
+              Services & Tools
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              <li>
+                <Link to="/services#buying-assistance" className="text-emerald-100/80 hover:text-white transition-colors">
+                  Property Buying Assistance
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#selling-assistance" className="text-emerald-100/80 hover:text-white transition-colors">
+                  Property Selling Assistance
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#emi-calculator" className="text-emerald-100/80 hover:text-white transition-colors">
+                  Home Loan EMI Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#documentation" className="text-emerald-100/80 hover:text-white transition-colors">
+                  Title Due-Diligence Guidance
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#site-visit" className="text-emerald-100/80 hover:text-white transition-colors">
+                  Escorted Site Visits
+                </Link>
+              </li>
+              <li>
+                <Link to="/resale" className="text-emerald-100/80 hover:text-white transition-colors">
+                  Resale Property Assistance
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 5: Office & Contact Information */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-[#C7A76C] uppercase tracking-wider font-display">
               Office & Contact
@@ -203,7 +245,7 @@ export const Footer: React.FC = () => {
           <div className="text-center md:text-left space-y-1">
             <p>© {currentYear} KK Associates (Klinkaaraa Associates). All Rights Reserved.</p>
             <p className="text-[11px] text-emerald-300/60">
-              Disclaimer: All real estate property representations, measurements, and specifications are for guidance. Legal ownership papers and RERA certifications are subject to verification prior to final transactions.
+              Disclaimer: KK Associates is a real estate marketing and consultancy advisory firm. All project details, prices, drawings, floor plans, and measurements are sourced from verified builder communications and subject to government regulations and builder updates. TS RERA numbers are displayed where registered.
             </p>
           </div>
 

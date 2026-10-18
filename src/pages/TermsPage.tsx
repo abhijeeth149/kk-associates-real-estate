@@ -30,7 +30,7 @@ export const TermsPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-gray-900 font-display">2. Legal & Title Verification Notice</h2>
           <p className="text-xs sm:text-sm text-gray-600">
-            Prospective buyers and investors are advised to conduct independent legal verification of mother deeds, Encumbrance Certificates (EC), and municipal sanction letters (HMDA, DTCP, TS RERA) through qualified legal professionals before committing funds or executing sale deeds. KK Associates facilitates document access and transparency between buyers and sellers.
+            Prospective buyers and investors are advised to conduct independent legal verification of mother deeds, Encumbrance Certificates (EC), and layout sanction letters (DTCP, TS RERA) through qualified legal professionals before committing funds or executing sale deeds. KK Associates facilitates document access and transparency between buyers and sellers.
           </p>
         </section>
 

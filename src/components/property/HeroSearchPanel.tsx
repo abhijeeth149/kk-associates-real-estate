@@ -136,7 +136,7 @@ export const HeroSearchPanel: React.FC = () => {
                 className="w-full pl-9 pr-7 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0D8B78] bg-[#F8FAF8] cursor-pointer font-medium"
               >
                 <option value="">All Types (Plots / Flats)</option>
-                <option value="Residential Plot">Residential Plot (HMDA/DTCP)</option>
+                <option value="Residential Plot">Residential Plot (Clear Title)</option>
                 <option value="Open Plot">Open Plot</option>
                 <option value="Premium Flat">Premium Flat (2/3 BHK)</option>
                 <option value="Residential Apartment">Residential Apartment</option>

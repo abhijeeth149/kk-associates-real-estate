@@ -102,3 +102,72 @@ Work Location: Gachibowli Site
 
 Please let me know when we can connect for a discussion.`;
 };
+
+/**
+ * 7. Verified Project Specific WhatsApp Enquiry
+ */
+export const getProjectWhatsAppMessage = (
+  project: { name: string; developer: string; location: string; slug: string },
+  action: 'general' | 'price' | 'brochure' | 'visit' | 'scheme' = 'general',
+  schemeName?: string
+): string => {
+  if (action === 'price') {
+    return `Hello KK Associates, I would like to request the latest verified price sheet and payment schedule for:
+
+Project: ${project.name}
+Developer: ${project.developer}
+Location: ${project.location}
+
+Please share the current per sq.ft rate, available floor inventory, and any applicable launch offers.`;
+  }
+
+  if (action === 'brochure') {
+    return `Hello KK Associates, I am interested in exploring:
+
+Project: ${project.name} (${project.developer})
+Location: ${project.location}
+
+Please share the detailed floor plans, master plan, and brochure.`;
+  }
+
+  if (action === 'scheme' && schemeName) {
+    return `Hello KK Associates, I would like details regarding the special payment scheme for:
+
+Project: ${project.name}
+Payment Scheme: ${schemeName}
+Location: ${project.location}
+
+Please explain the eligibility, bank tie-ups, and booking requirements.`;
+  }
+
+  if (action === 'visit') {
+    return `Hello KK Associates, I would like to arrange a site visit for:
+
+Project: ${project.name} (${project.developer})
+Location: ${project.location}
+
+Please let me know when your team can coordinate an escorted site visit.`;
+  }
+
+  return `Hello KK Associates, I am interested in learning more about:
+
+Project: ${project.name}
+Developer: ${project.developer}
+Location: ${project.location}
+
+Please share complete project information and available configurations.`;
+};
+
+/**
+ * 8. Service Specific WhatsApp Enquiry
+ */
+export const getServiceWhatsAppMessage = (serviceName: string, customerDetails?: string): string => {
+  return `Hello KK Associates, I am interested in your real estate service:
+
+Service: ${serviceName}
+${customerDetails ? `Details: ${customerDetails}\n` : ''}
+Location: Hyderabad
+
+Please get in touch with me to discuss further.`;
+};
+
