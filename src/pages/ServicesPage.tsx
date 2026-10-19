@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Building2, 
-  LandPlot, 
-  Calculator, 
-  FileCheck2, 
-  Car, 
-  Landmark, 
-  CheckCircle2, 
+import {
+  Building2,
+  LandPlot,
+  Calculator,
+  FileCheck2,
+  Car,
+  Landmark,
+  CheckCircle2,
   HeartHandshake
 } from 'lucide-react';
 import { EmiCalculator } from '../components/tools/EmiCalculator';
@@ -20,7 +20,7 @@ export const ServicesPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F8FAF8] pb-24 text-[#172522]">
-      
+
       {/* 1. HERO HEADER */}
       <section className="bg-gradient-to-b from-[#0B1315] to-[#172522] text-white pt-12 pb-16 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-4xl mx-auto text-center space-y-4">
@@ -55,7 +55,7 @@ export const ServicesPage: React.FC = () => {
 
       {/* 2. SERVICES GRID & DETAILS */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-16">
-        
+
         {/* Service 1: Property Buying Assistance */}
         <section id="buying-assistance" className="bg-white rounded-3xl border border-gray-100 p-6 sm:p-10 shadow-sm space-y-6 text-left">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-gray-100">
@@ -78,7 +78,7 @@ export const ServicesPage: React.FC = () => {
           </div>
 
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-            Finding the right property in Hyderabad’s booming market requires local expertise and transparent verification. Whether you are looking for a clear-title residential plot in Mokila, a luxury 3 or 4 BHK high-rise in Kokapet, or an integrated township apartment in Budvel, KK Associates simplifies the search.
+            Finding the right property in Hyderabad’s booming market requires local expertise and transparent verification. Whether you are looking for a clear-title Apartments in Mokila, a luxury 3 or 4 BHK high-rise in Kokapet, or an integrated township apartment in Budvel, KK Associates simplifies the search.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">

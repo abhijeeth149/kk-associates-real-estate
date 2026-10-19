@@ -5,7 +5,7 @@ import { FileText } from 'lucide-react';
 export const TermsPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-8">
-      
+
       <div className="space-y-3 pb-6 border-b border-gray-200">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F5F2] text-[#075E54] text-xs font-bold uppercase tracking-wider">
           <FileText className="w-4 h-4" />

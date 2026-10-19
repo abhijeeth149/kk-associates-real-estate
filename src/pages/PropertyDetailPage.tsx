@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { 
-  MapPin, 
-  Bed, 
-  Maximize2, 
-  ShieldCheck, 
-  Calendar, 
-  Phone, 
-  Mail, 
-  Compass, 
-  Share2, 
-  Heart, 
-  ArrowLeft, 
-  CheckCircle2, 
-  Sparkles, 
-  Building2, 
+import {
+  MapPin,
+  Bed,
+  Maximize2,
+  ShieldCheck,
+  Calendar,
+  Phone,
+  Mail,
+  Compass,
+  Share2,
+  Heart,
+  ArrowLeft,
+  CheckCircle2,
+  Sparkles,
+  Building2,
   FileCheck,
   AlertCircle
 } from 'lucide-react';
@@ -72,7 +72,7 @@ export const PropertyDetailPage: React.FC = () => {
         title: property.title,
         text: `Check out ${property.title} in ${property.location} on KK Associates`,
         url: window.location.href
-      }).catch(() => {});
+      }).catch(() => { });
     } else {
       navigator.clipboard.writeText(window.location.href);
       showToast('Property link copied to clipboard!', 'info');
@@ -85,7 +85,7 @@ export const PropertyDetailPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
-      
+
       {/* Top Breadcrumb & Share Navigation */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <button
@@ -102,9 +102,8 @@ export const PropertyDetailPage: React.FC = () => {
               toggleFavorite(property.id);
               showToast(isFav ? 'Removed from saved properties' : 'Saved to your properties list', 'info');
             }}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-              isFav ? 'bg-rose-500 text-white' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
-            }`}
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${isFav ? 'bg-rose-500 text-white' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              }`}
           >
             <Heart className={`w-4 h-4 ${isFav ? 'fill-white' : 'text-rose-500'}`} />
             <span>{isFav ? 'Saved' : 'Save Property'}</span>
@@ -163,10 +162,10 @@ export const PropertyDetailPage: React.FC = () => {
 
       {/* Main Gallery & Overview Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-        
+
         {/* Left Column: Media Gallery, Specs, Details (8 cols) */}
         <div className="lg:col-span-8 space-y-8">
-          
+
           {/* Main Photo Gallery */}
           <div className="space-y-3">
             <div className="h-[360px] sm:h-[480px] rounded-3xl overflow-hidden bg-gray-100 shadow-md border border-gray-200 relative">
@@ -318,7 +317,7 @@ export const PropertyDetailPage: React.FC = () => {
         {/* Right Column: Sticky Action Card (4 cols) */}
         <div className="lg:col-span-4">
           <div className="sticky top-24 space-y-6">
-            
+
             {/* Action Box with 4 Required Buttons */}
             <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-200 shadow-xl space-y-6">
               <div>
@@ -335,7 +334,7 @@ export const PropertyDetailPage: React.FC = () => {
 
               {/* 4 Required Action Buttons */}
               <div className="space-y-3">
-                
+
                 {/* 1. Enquire on WhatsApp */}
                 <WhatsAppButton
                   fullWidth
@@ -402,7 +401,7 @@ export const PropertyDetailPage: React.FC = () => {
                 Similar Properties You May Like
               </h2>
               <p className="text-xs text-gray-500 mt-0.5">
-                Explore matching residential plots and apartments in nearby locations.
+                Explore matching Flats,Villas and apartments in nearby locations.
               </p>
             </div>
             <Link to="/properties" className="text-xs font-bold text-[#075E54] hover:underline">

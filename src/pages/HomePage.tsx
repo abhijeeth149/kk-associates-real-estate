@@ -23,7 +23,7 @@ import { getResaleWhatsAppMessage } from '../utils/whatsapp';
 
 export const HomePage: React.FC = () => {
   const { properties } = usePropertyContext();
-  const { openEnquiryModal, openSiteVisitModal } = useModalContext();
+  const { openSiteVisitModal } = useModalContext();
 
   const resaleProperties = properties.filter(p => p.purpose === 'resale').slice(0, 3);
   const showcaseProjects = VERIFIED_PROJECTS.slice(0, 6);
@@ -102,113 +102,7 @@ export const HomePage: React.FC = () => {
         <HeroSearchPanel />
       </section>
 
-      {/* 3. PROPERTY CATEGORIES */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#0D8B78] bg-[#E8F5F2] px-3 py-1 rounded-full">
-            Tailored Real Estate Solutions
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-[#172522] mt-3">
-            Find the Right Property Category
-          </h2>
-          <p className="text-sm sm:text-base text-gray-600 mt-2">
-            Whether you are building your custom dream villa, land banking in growth corridors, or moving into a high-rise sky residence, explore curated categories.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {[
-            {
-              title: 'Residential Plots',
-              badge: 'Clear Title',
-              desc: 'Verified residential layout plots in prime growth corridors with 40ft blacktop roads and clear titles.',
-              image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80',
-              link: '/properties?type=Residential+Plot'
-            },
-            {
-              title: 'Flats & Apartments',
-              badge: '2, 3 & 4 BHK',
-              desc: 'Modern high-rise residences with clubhouse amenities, lake views, and quick IT connectivity.',
-              image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80',
-              link: '/properties?type=Premium+Flat'
-            },
-            {
-              title: 'Villas & Sky Mansions',
-              badge: 'Elite Luxury',
-              desc: 'Exclusive gated community villas and duplex sky residences with expansive private sit-outs.',
-              image: '/assets/projects/the-marquise/images/render_page_1.jpg',
-              link: '/projects/the-marquise'
-            },
-            {
-              title: 'Verified Resale Properties',
-              badge: 'Immediate Move-in',
-              desc: 'Ready-to-occupy flats and plots with clean 30-year link documents and fair valuations.',
-              image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80',
-              link: '/resale'
-            },
-            {
-              title: 'Commercial Properties',
-              badge: 'High Yield',
-              desc: 'Strategic commercial open plots and retail spaces along key arterial growth expressways.',
-              image: 'https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?auto=format&fit=crop&w=1000&q=80',
-              link: '/properties?type=Open+Plot'
-            },
-            {
-              title: 'New Residential Projects',
-              badge: 'Launch Phase',
-              desc: 'Direct developer bookings with zero brokerage for landmark projects in Neopolis and Budvel.',
-              image: '/assets/projects/the-prestige-city/images/render_page_1.jpg',
-              link: '/projects'
-            }
-          ].map(cat => (
-            <div
-              key={cat.title}
-              className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between text-left"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={cat.image}
-                  alt={cat.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
-                <span className="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-[#075E54] text-white text-[11px] font-bold shadow-md">
-                  {cat.badge}
-                </span>
-                <h3 className="absolute bottom-3 left-4 text-xl font-bold font-display text-white">
-                  {cat.title}
-                </h3>
-              </div>
-
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                  {cat.desc}
-                </p>
-
-                <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
-                  <Link
-                    to={cat.link}
-                    className="text-xs sm:text-sm font-bold text-[#075E54] group-hover:text-[#0D8B78] flex items-center gap-1.5"
-                  >
-                    <span>Explore Properties</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-
-                  <button
-                    onClick={() => openEnquiryModal()}
-                    className="text-[11px] font-semibold text-gray-500 hover:text-gray-800"
-                  >
-                    Enquire
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. VERIFIED FEATURED PROJECTS (Using Genuine Assets) */}
+      {/* 3. VERIFIED FEATURED PROJECTS (Using Genuine Assets) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 text-left">
           <div>

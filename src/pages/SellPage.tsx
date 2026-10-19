@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { 
-  Send, 
-  MessageCircle, 
-  CheckCircle2, 
-  Upload, 
-  ShieldAlert, 
-  LandPlot, 
-  DollarSign, 
-  FileCheck 
+import {
+  Send,
+  MessageCircle,
+  CheckCircle2,
+  Upload,
+  ShieldAlert,
+  LandPlot,
+  DollarSign,
+  FileCheck
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import type { SellPropertyFormData } from '../types/property';
@@ -60,7 +60,7 @@ export const SellPage: React.FC = () => {
     setIsSubmitted(true);
     try {
       confetti({ particleCount: 70, spread: 60, origin: { y: 0.7 } });
-    } catch {}
+    } catch { }
     showToast('Property details received! Our selling advisor will connect with you.', 'success');
   };
 
@@ -86,13 +86,13 @@ export const SellPage: React.FC = () => {
     setIsSubmitted(true);
     try {
       confetti({ particleCount: 70, spread: 60, origin: { y: 0.7 } });
-    } catch {}
+    } catch { }
     showToast('Property submission logged successfully! We will review and contact you.', 'success');
   };
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
-      
+
       {/* Hero Header */}
       <div className="bg-gradient-to-r from-[#075E54] to-[#043E37] rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden text-center sm:text-left">
         <div className="max-w-2xl space-y-3 relative z-10">
@@ -178,7 +178,7 @@ export const SellPage: React.FC = () => {
           </div>
         ) : (
           <form className="space-y-6">
-            
+
             <div className="border-b border-gray-100 pb-4">
               <h2 className="text-2xl font-bold font-display text-gray-900">
                 Property Submission Form
@@ -261,8 +261,7 @@ export const SellPage: React.FC = () => {
                     onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
                     className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0D8B78] bg-[#F8FAF8] cursor-pointer"
                   >
-                    <option value="Residential Plot">Residential Plot (Clear Title)</option>
-                    <option value="Open Plot">Open Plot</option>
+
                     <option value="Premium Flat">Premium Flat (2/3 BHK)</option>
                     <option value="Residential Apartment">Residential Apartment</option>
                     <option value="Resale Flat">Resale Flat</option>

@@ -80,7 +80,7 @@ export const PropertyFilters: React.FC = () => {
 
       {/* Main Filter Controls Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        
+
         {/* 1. Search Query */}
         <div className="relative">
           <label className="block text-xs font-semibold text-gray-700 mb-1.5">
@@ -111,8 +111,6 @@ export const PropertyFilters: React.FC = () => {
               className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0D8B78] bg-white cursor-pointer"
             >
               <option value="">All Property Types</option>
-              <option value="Residential Plot">Residential Plot (Clear Title)</option>
-              <option value="Open Plot">Open Plot</option>
               <option value="Premium Flat">Premium Flat (2/3 BHK)</option>
               <option value="Residential Apartment">Residential Apartment</option>
               <option value="Resale Flat">Resale Flat</option>
@@ -161,7 +159,7 @@ export const PropertyFilters: React.FC = () => {
 
       {/* Secondary Row: Budget Slider & Sorting & Reset */}
       <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
-        
+
         {/* Budget Slider */}
         <div className="w-full md:w-1/2">
           <div className="flex items-center justify-between text-xs font-semibold text-gray-700 mb-1">
