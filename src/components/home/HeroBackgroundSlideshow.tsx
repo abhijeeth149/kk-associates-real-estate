@@ -39,6 +39,29 @@ export const HERO_SLIDES: HeroSlide[] = [
     objectPosition: 'center center',
     extraOverlay: 'bg-[#0F1919]/25',
   },
+  {
+    id: 'hero-5',
+    src: '/assets/hero/Screenshot%202026-10-19%20105832.png',
+    alt: 'Osman Sagar Lake Views and luxury high-rise tower in Kokapet - KK Associates',
+    title: 'Lakefront High-Rise Living',
+    objectPosition: 'center 35%',
+    extraOverlay: 'bg-[#0B1315]/20',
+  },
+  {
+    id: 'hero-6',
+    src: '/assets/hero/Screenshot%202026-10-19%20110713.png',
+    alt: 'Grand architectural entrance gateway and luxury township arrival experience - KK Associates',
+    title: 'Grand Architectural Entrance',
+    objectPosition: 'center center',
+  },
+  {
+    id: 'hero-7',
+    src: '/assets/hero/Screenshot%202026-10-19%20103913.png',
+    alt: 'Iconic twin skyscrapers with connecting cantilevered skybridge - KK Associates',
+    title: 'Iconic Twin Towers & Skybridge',
+    objectPosition: 'center 35%',
+    extraOverlay: 'bg-[#0B1315]/20',
+  },
 ];
 
 const SLIDE_DURATION = 5000; // 5 seconds per image
@@ -104,7 +127,7 @@ export const HeroBackgroundSlideshow: React.FC = () => {
   };
 
   return (
-    <div 
+    <div
       className="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none"
       aria-label="Homepage background property slideshow"
     >
@@ -112,18 +135,16 @@ export const HeroBackgroundSlideshow: React.FC = () => {
       {HERO_SLIDES.map((slide, index) => {
         const isActive = index === currentIndex;
         const isErrored = erroredImages[slide.id];
-        const imageSrc = isErrored 
+        const imageSrc = isErrored
           ? '/assets/projects/godrej-epoque-neopolis/images/render_page_1.jpg'
           : slide.src;
 
         return (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-opacity ease-in-out ${
-              prefersReducedMotion ? 'duration-0' : 'duration-[1300ms]'
-            } ${
-              isActive ? 'opacity-100 z-10' : 'opacity-0 z-0'
-            }`}
+            className={`absolute inset-0 transition-opacity ease-in-out ${prefersReducedMotion ? 'duration-0' : 'duration-[1300ms]'
+              } ${isActive ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
             aria-hidden={!isActive}
           >
             <img
@@ -147,7 +168,7 @@ export const HeroBackgroundSlideshow: React.FC = () => {
       })}
 
       {/* 2. Lighter Subtle Gradient Overlay - Maximum Brightness & Architectural Visibility */}
-      <div 
+      <div
         className="absolute inset-0 z-20 pointer-events-none"
         style={{
           background: 'linear-gradient(180deg, rgba(15, 25, 25, 0.28) 0%, rgba(15, 25, 25, 0.20) 45%, rgba(15, 25, 25, 0.38) 100%)',
@@ -155,7 +176,7 @@ export const HeroBackgroundSlideshow: React.FC = () => {
       />
 
       {/* 3. Subtle interactive indicator dots positioned unobtrusively */}
-      <div 
+      <div
         className="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 pointer-events-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/15 shadow-xl"
         role="tablist"
         aria-label="Homepage background image slideshow controls"
@@ -174,11 +195,10 @@ export const HeroBackgroundSlideshow: React.FC = () => {
               className="group relative p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#DFCA98] rounded-full transition-all"
             >
               <span
-                className={`block h-1.5 rounded-full transition-all duration-500 ${
-                  isActive 
-                    ? 'w-7 bg-[#DFCA98] shadow-[0_0_8px_rgba(223,202,152,0.6)]' 
-                    : 'w-2 bg-white/40 group-hover:bg-white/80'
-                }`}
+                className={`block h-1.5 rounded-full transition-all duration-500 ${isActive
+                  ? 'w-7 bg-[#DFCA98] shadow-[0_0_8px_rgba(223,202,152,0.6)]'
+                  : 'w-2 bg-white/40 group-hover:bg-white/80'
+                  }`}
               />
               <span className="sr-only">{slide.title}</span>
             </button>
