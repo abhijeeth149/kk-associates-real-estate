@@ -1,80 +1,117 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-interface BrandLogoProps {
+export interface BrandLogoProps {
   variant?: 'light' | 'dark' | 'white';
   showSubtitle?: boolean;
+  showText?: boolean;
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   asLink?: boolean;
+  onClick?: () => void;
 }
 
 export const BrandLogo: React.FC<BrandLogoProps> = ({
   variant = 'dark',
   showSubtitle = true,
+  showText = true,
   size = 'md',
   className = '',
-  asLink = true
+  asLink = true,
+  onClick
 }) => {
-  const iconSizes = {
-    sm: 'w-8 h-8',
-    md: 'w-10 h-10',
-    lg: 'w-12 h-12'
+  const [imgError, setImgError] = useState(false);
+
+  // Sizing definitions for logo image container (maintains strict 1:1 aspect ratio)
+  const imageSizes = {
+    sm: 'w-8 h-8 sm:w-9 sm:h-9',
+    md: 'w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11',
+    lg: 'w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14'
+  };
+
+  const pixelDimensions = {
+    sm: 36,
+    md: 44,
+    lg: 56
   };
 
   const titleSizes = {
-    sm: 'text-base',
-    md: 'text-lg md:text-xl',
-    lg: 'text-2xl md:text-3xl'
+    sm: 'text-sm sm:text-base',
+    md: 'text-sm sm:text-base lg:text-base xl:text-lg',
+    lg: 'text-lg sm:text-xl md:text-2xl'
   };
 
   const subtitleSizes = {
-    sm: 'text-[9px]',
-    md: 'text-[11px]',
-    lg: 'text-xs'
+    sm: 'text-[9px] sm:text-[10px]',
+    md: 'text-[9px] sm:text-[10px] xl:text-[11px]',
+    lg: 'text-[11px] sm:text-xs'
   };
 
   const isLight = variant === 'light' || variant === 'white';
 
   const content = (
     <div className={`flex items-center gap-2.5 sm:gap-3 group transition-transform ${className}`}>
-      {/* Brand Icon SVG: Double Architectural Chevron / Modern Roof Motif */}
-      <div className={`relative ${iconSizes[size]} flex-shrink-0 flex items-center justify-center rounded-xl transition-all duration-300 ${isLight ? 'bg-white/10 group-hover:bg-white/20' : 'bg-emerald-soft group-hover:shadow-md'}`}>
-        <svg 
-          viewBox="0 0 100 100" 
-          className="w-full h-full p-1.5"
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path 
-            d="M20 66 L50 24 L80 66 L66 66 L50 42 L34 66 Z" 
-            fill={isLight ? '#FFFFFF' : '#075E54'} 
+      {/* Official KK Associates Brand Logo Image */}
+      <div 
+        className={`relative ${imageSizes[size]} aspect-square flex-shrink-0 rounded-xl overflow-hidden transition-all duration-300 shadow-sm border ${
+          isLight 
+            ? 'border-[#C7A76C]/40 bg-[#075E54] ring-1 ring-white/10 group-hover:border-[#DFCA98] group-hover:shadow-md' 
+            : 'border-[#C7A76C]/30 bg-[#075E54] ring-1 ring-black/5 group-hover:border-[#C7A76C] group-hover:shadow-md'
+        }`}
+      >
+        {!imgError ? (
+          <img
+            src="/assets/logo.png"
+            alt="KK Associates logo"
+            width={pixelDimensions[size]}
+            height={pixelDimensions[size]}
+            loading="eager"
+            decoding="async"
+            onError={() => setImgError(true)}
+            className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-300 group-hover:scale-105"
           />
-          <path 
-            d="M36 78 L50 58 L64 78 L50 71 Z" 
-            fill="#C7A76C" 
-          />
-          <circle cx="50" cy="18" r="4.5" fill="#C7A76C" />
-        </svg>
-      </div>
-
-      {/* Brand Name & Subtitle */}
-      <div className="flex flex-col">
-        <span className={`font-extrabold tracking-tight leading-none font-display ${titleSizes[size]} ${isLight ? 'text-white' : 'text-[#172522]'}`}>
-          KK ASSOCIATES
-        </span>
-        {showSubtitle && (
-          <span className={`font-medium tracking-wide mt-0.5 leading-none ${subtitleSizes[size]} ${isLight ? 'text-emerald-100/80' : 'text-[#075E54]'}`}>
-            (Klinkaaraa Associates)
-          </span>
+        ) : (
+          /* Graceful fallback in the unlikely event the image cannot be loaded */
+          <div className="w-full h-full flex items-center justify-center bg-[#075E54] text-[#C7A76C] font-display font-black text-lg">
+            K
+          </div>
         )}
       </div>
+
+      {/* Brand Name & Subtitle Typography */}
+      {showText && (
+        <div className="flex flex-col flex-shrink-0 text-left">
+          <span 
+            className={`font-black tracking-tight leading-none font-display ${titleSizes[size]} transition-colors duration-200 ${
+              isLight 
+                ? 'text-white group-hover:text-[#DFCA98]' 
+                : 'text-[#172522] group-hover:text-[#075E54]'
+            }`}
+          >
+            KK ASSOCIATES
+          </span>
+          {showSubtitle && (
+            <span 
+              className={`font-semibold tracking-wide mt-0.5 leading-none ${subtitleSizes[size]} transition-colors duration-200 ${
+                isLight ? 'text-[#DFCA98]' : 'text-[#075E54]'
+              }`}
+            >
+              (Klinkaaraa Associates)
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 
   if (asLink) {
     return (
-      <Link to="/" aria-label="KK Associates Real Estate Homepage">
+      <Link 
+        to="/" 
+        onClick={onClick}
+        aria-label="KK Associates Real Estate Homepage"
+        className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#075E54] rounded-xl"
+      >
         {content}
       </Link>
     );
@@ -82,3 +119,4 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
 
   return content;
 };
+

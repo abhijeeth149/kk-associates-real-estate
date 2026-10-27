@@ -1,6 +1,7 @@
 export const COMPANY_CONFIG = {
   name: 'KK ASSOCIATES',
   legalName: 'Klinkaaraa Associates',
+  logo: '/assets/logo.png',
   tagline: 'Find Your Place. Build Your Future.',
   shortDescription: 'Your trusted real estate partner in Hyderabad for premium residential plots, open plots, luxury apartments, and verified resale properties.',
   

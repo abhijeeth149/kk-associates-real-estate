@@ -138,13 +138,13 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center justify-between gap-3 lg:gap-5 xl:gap-8">
             
             {/* Logo */}
-            <BrandLogo size="md" />
+            <BrandLogo size="md" className="flex-shrink-0 mr-1 lg:mr-2" />
 
             {/* Desktop Navigation Links & Mega Menu Triggers */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 flex-shrink">
               
               {/* 1. BUY */}
               <div 

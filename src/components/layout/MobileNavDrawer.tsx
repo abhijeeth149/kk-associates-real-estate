@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { COMPANY_CONFIG } from '../../config/company';
 import { WhatsAppButton } from '../common/WhatsAppButton';
+import { BrandLogo } from '../common/BrandLogo';
 import { VERIFIED_PROJECTS } from '../../data/projects';
 
 interface MobileNavDrawerProps {
@@ -49,16 +50,11 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
       <div className="relative w-full max-w-xs sm:max-w-sm bg-white h-full shadow-2xl flex flex-col z-10 overflow-y-auto">
         
         {/* Drawer Header */}
-        <div className="p-4 bg-[#075E54] text-white flex items-center justify-between border-b border-white/10 sticky top-0 z-20">
-          <div>
-            <div className="font-display font-extrabold text-base tracking-wide flex items-center gap-1.5">
-              <span>KK ASSOCIATES</span>
-            </div>
-            <p className="text-[11px] text-emerald-200">Klinkaaraa Associates • Gachibowli</p>
-          </div>
+        <div className="p-3.5 sm:p-4 bg-[#075E54] text-white flex items-center justify-between border-b border-white/10 sticky top-0 z-20">
+          <BrandLogo variant="light" size="sm" asLink onClick={onClose} />
           <button
             onClick={onClose}
-            className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors ml-2"
             aria-label="Close menu"
           >
             <X className="w-5 h-5" />

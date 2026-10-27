@@ -51,11 +51,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* 5-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 pb-12 border-b border-emerald-800/80 text-left">
+        {/* Modern 12-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 pb-12 border-b border-emerald-800/80 text-left">
           
           {/* Column 1: Brand Info */}
-          <div className="space-y-4 lg:col-span-1 md:col-span-2">
+          <div className="space-y-4 lg:col-span-4 md:col-span-2">
             <BrandLogo variant="light" size="lg" />
             <p className="text-emerald-100/80 text-xs sm:text-sm leading-relaxed">
               KK Associates (Klinkaaraa Associates) is your trusted real estate partner headquartered in Gachibowli, Hyderabad, for residential plots, open plots, high-rise apartments, and verified resale properties.

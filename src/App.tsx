@@ -32,9 +32,18 @@ const AdminPage = lazy(() => import('./pages/AdminPage').then(m => ({ default: m
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
 const RouteLoadingFallback: React.FC = () => (
-  <div className="min-h-[60vh] flex flex-col items-center justify-center p-8">
-    <div className="w-10 h-10 border-4 border-[#075E54]/20 border-t-[#075E54] rounded-full animate-spin mb-4" />
-    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Loading KK Associates...</p>
+  <div className="min-h-[60vh] flex flex-col items-center justify-center p-8 text-center">
+    <div className="relative w-12 h-12 mb-3">
+      <div className="absolute -inset-1 rounded-2xl border-2 border-[#075E54]/20 border-t-[#075E54] animate-spin" />
+      <img
+        src="/assets/logo.png"
+        alt="KK Associates logo"
+        width={48}
+        height={48}
+        className="w-full h-full object-cover rounded-xl shadow-sm border border-[#C7A76C]/30"
+      />
+    </div>
+    <p className="text-xs font-bold text-[#075E54] uppercase tracking-wider">Loading KK Associates...</p>
   </div>
 );
 
